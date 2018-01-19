@@ -85,7 +85,8 @@ h5 {
   text-align: left; }
 
 #header {
-  background: #17190a url(fern.jpg) no-repeat fixed;
+  background: url(fern.jpg) no-repeat fixed;
+  background-color: #17190a;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;

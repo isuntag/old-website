@@ -1,5 +1,10 @@
 $(document).ready(function() {
     $('body').removeClass('fade-out');
+    $('.project').hover(function(){
+        updateStatusBarURL($(this).find('a:first').attr('href'));
+    }, function () {
+        clearStatusBarURL();
+    });
     $('.project').click(function(){
         window.open($(this).find('a:first').attr('href'), '_blank');
         return false;

@@ -106,7 +106,8 @@ h5 {
 }
 // First Section
 #header {
-    background: #17190a url(fern.jpg) no-repeat fixed;
+    background: url(fern.jpg) no-repeat fixed;
+	background-color: #17190a;
     @include background-size(100%);
     @include background-size(cover);
 }
