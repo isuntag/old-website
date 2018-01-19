@@ -16,7 +16,13 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 /* sm */
 @media screen and (min-width: 768px) {
   body {
-    font-size: 2.2em; } }
+    font-size: 2.2em; }
+
+  #header h1 {
+    font-size: 4em !important; }
+
+  .description {
+    font-size: 1.2em; } }
 /* md */
 @media screen and (min-width: 992px) {
   body {
@@ -29,17 +35,23 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     font-size: 5em !important; }
 
   #header h1 {
-    font-size: 6.8em !important; }
+    font-size: 6em !important; }
 
   h3 {
     font-size: 1.3em !important; }
 
   .description {
-    font-size: 2em; } }
+    font-size: 1.5em; } }
 /* lg */
 @media screen and (min-width: 1200px) {
   body {
-    font-size: 1.6em; } }
+    font-size: 1.6em; }
+
+  #header h1 {
+    font-size: 6.8em !important; }
+
+  .description {
+    font-size: 1.7em; } }
 body {
   opacity: 1;
   transition: 1s opacity; }
