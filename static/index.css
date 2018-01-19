@@ -151,8 +151,7 @@ h5 {
 
 .project:hover {
   cursor: hand;
-  cursor: pointer;
-  opacity: .9; }
+  cursor: pointer; }
 
 .imagecontainer {
   width: 100%;
