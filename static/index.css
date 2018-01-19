@@ -1,0 +1,206 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: 200;
+  font-family: 'Helvetica Neue', sans-serif;
+  vertical-align: baseline;
+  background: transparent; }
+
+/*font scaling*/
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 2.4em; } }
+/* sm */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 2.2em; } }
+/* md */
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 1.8em; }
+
+  #header, #portfolio {
+    background-attachment: scroll; }
+
+  h1 {
+    font-size: 5em !important; }
+
+  h3 {
+    font-size: 1.3em !important; } }
+/* lg */
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 1.6em; } }
+body {
+  opacity: 1;
+  transition: 1s opacity; }
+
+body.fade-out {
+  opacity: 0;
+  transition: none; }
+
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+  color: inherit; }
+
+.container-fluid {
+  padding: 0;
+  height: 100vh;
+  color: #000000; }
+
+.section {
+  height: auto;
+  min-height: 100%;
+  padding: 0;
+  display: flex; }
+
+.content {
+  margin: auto;
+  text-align: center; }
+
+.scroll_button {
+  margin: 50px 20px;
+  opacity: .5;
+  display: inline-block;
+  color: #FFFFFF; }
+
+h1 {
+  font-size: 3em; }
+
+h3 {
+  font-size: 1.6em;
+  margin-bottom: 20px; }
+
+h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 20px; }
+
+h5 {
+  text-transform: uppercase;
+  text-align: left; }
+
+#header {
+  background: #17190a url(fern.jpg) no-repeat fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#header h1 {
+  color: #FFFFFF; }
+
+.description {
+  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px; }
+
+#info {
+  background-color: #FFF; }
+
+#info h1 {
+  margin-bottom: 100px; }
+
+@media only screen and (min-width: 992px) {
+  #info .inner {
+    display: flex;
+    align-items: center; } }
+#info .content img {
+  width: 100%;
+  max-width: 300px; }
+
+#info .information {
+  padding-top: 20px; }
+
+#info .information p {
+  padding-bottom: 20px; }
+
+#info .scroll_button {
+  color: #000000; }
+
+#portfolio {
+  background: url(city.jpg) 50% 0 no-repeat fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#portfolio h1 {
+  color: #FFFFFF;
+  margin-bottom: 100px; }
+
+#portfolio small {
+  font-size: 0.8em; }
+
+.project {
+  margin: 20px;
+  padding: 20px;
+  background-color: #FFFFFF; }
+
+.imagecontainer {
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto; }
+
+.project img {
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto; }
+
+.project a:hover {
+  color: #676767; }
+
+.stack {
+  font-size: 0.9em; }
+
+#resume {
+  font-size: 0.8em; }
+
+#resume ul {
+  text-align: left;
+  list-style-position: inside; }
+
+#resume .experience h5 {
+  margin-bottom: 10px; }
+
+.card-columns {
+  column-count: 1; }
+  @media screen and (min-width: 992px) {
+    .card-columns {
+      column-count: 2; } }
+
+.card {
+  border: none;
+  border-radius: 0;
+  padding: 20px; }
+
+#resume .scroll_button {
+  color: #000000; }
+
+#resume .btn {
+  font: inherit; }
+
+.footer {
+  text-align: center;
+  font-size: 0.5em; }
+
+.zeroed {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+/*# sourceMappingURL=index.css.map */
