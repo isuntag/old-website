@@ -28,8 +28,14 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
   h1 {
     font-size: 5em !important; }
 
+  #header h1 {
+    font-size: 6.8em !important; }
+
   h3 {
-    font-size: 1.3em !important; } }
+    font-size: 1.3em !important; }
+
+  .description {
+    font-size: 2em; } }
 /* lg */
 @media screen and (min-width: 1200px) {
   body {
@@ -85,8 +91,7 @@ h5 {
   text-align: left; }
 
 #header {
-  background: url(fern.jpg) no-repeat fixed;
-  background-color: #17190a;
+  background: url(fern.jpg) 50% 0 no-repeat fixed;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;

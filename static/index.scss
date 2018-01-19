@@ -44,9 +44,15 @@ $imgwidth: 300px;
 	h1 {
         font-size: 5em !important;
     }
+	#header h1 {
+		font-size: 6.8em !important;
+	}
     h3 {
         font-size: 1.3em !important;
     }
+	.description {
+		font-size: 2em;
+	}
 }
 /* lg */
 @media screen and (min-width: 1200px) {
