@@ -149,6 +149,11 @@ h5 {
   padding: 20px;
   background-color: #FFFFFF; }
 
+.project:hover {
+  cursor: hand;
+  cursor: pointer;
+  opacity: .9; }
+
 .imagecontainer {
   width: 100%;
   border-radius: 50%;

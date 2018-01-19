@@ -1,5 +1,9 @@
 $(document).ready(function() {
     $('body').removeClass('fade-out');
+    $(".project").click(function(){
+        window.open($(this).find("a:first").attr("href"), '_blank');
+        return false;
+    });
     var isTouchDevice = 'ontouchstart' in document.documentElement;
     if (isTouchDevice == false) {
         $('.scroll_button')
