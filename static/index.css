@@ -140,6 +140,9 @@ h5 {
 #info .scroll_button {
   color: #000000; }
 
+.socials {
+  font-size: 2em; }
+
 #portfolio {
   background: #416d8c url("city.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
