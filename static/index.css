@@ -23,13 +23,13 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
   .description {
     font-size: 1.2em; } }
+@media screen and (max-width: 991px) {
+  #header, #portfolio {
+    background-attachment: scroll !important; } }
 /* md */
 @media screen and (min-width: 992px) {
   body {
     font-size: 1.8em; }
-
-  #header, #portfolio {
-    background-attachment: scroll; }
 
   h1 {
     font-size: 5em !important; }
@@ -103,11 +103,7 @@ h5 {
   text-align: left; }
 
 #header {
-  background: url(fern.jpg) 50% 0 no-repeat fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  background: #17190a url("fern.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -145,11 +141,7 @@ h5 {
   color: #000000; }
 
 #portfolio {
-  background: url(city.jpg) 50% 0 no-repeat fixed;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  background: #416d8c url("city.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

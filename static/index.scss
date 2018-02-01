@@ -37,15 +37,17 @@ $imgwidth: 300px;
 		font-size: 1.2em;
 	}
 }
+@media screen and (max-width: 991px) {
+	// Makes background images scroll on smaller devices so the background image will show correctly on all devices
+	#header, #portfolio {
+        background-attachment: scroll !important;
+    }
+}
 /* md */
 @media screen and (min-width: 992px) {
     $imgwidth: 200px;
     body {
         font-size: 1.8em;
-    }
-	// Makes background images scroll on smaller devices so the background image will show correctly on all devices
-	#header, #portfolio {
-        background-attachment: scroll;
     }
 	h1 {
         font-size: 5em !important;
@@ -124,9 +126,7 @@ h5 {
 }
 // First Section
 #header {
-    background: url(fern.jpg) 50% 0 no-repeat fixed;
-	// background-color: #17190a;
-    @include background-size(100%);
+    background: #17190a url("fern.jpg") no-repeat center center fixed;
     @include background-size(cover);
 }
 #header h1 {
@@ -166,8 +166,7 @@ h5 {
 }
 // Portfolio Section
 #portfolio {
-    background: url(city.jpg) 50% 0 no-repeat fixed;
-    @include background-size(100%);
+    background: #416d8c url("city.jpg") no-repeat center center fixed;
     @include background-size(cover);
 }
 #portfolio h1 {
