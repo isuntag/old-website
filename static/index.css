@@ -103,11 +103,15 @@ h5 {
   text-align: left; }
 
 #header {
-  background: #17190a url("fern.jpg") no-repeat center center fixed;
+  background-color: #2b3f00;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  transition: background 0.5s linear; }
 
 #header h1 {
   color: #FFFFFF; }
@@ -144,11 +148,15 @@ h5 {
   font-size: 2em; }
 
 #portfolio {
-  background: #416d8c url("city.jpg") no-repeat center center fixed;
+  background-color: #416d8c;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  transition: background 0.5s linear; }
 
 #portfolio h1 {
   color: #FFFFFF;

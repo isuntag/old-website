@@ -1,5 +1,20 @@
 $(document).ready(function() {
     $('body').removeClass('fade-out');
+
+    // Load #header background image
+    var fern = new Image();
+    fern.src = "static/fern.jpg";
+    fern.onload = function(){
+      $("#header").css("background-image","url('static/fern.jpg')");
+    };
+
+    // Load #header background image
+    var city = new Image();
+    city.src = "static/city.jpg";
+    city.onload = function(){
+      $("#portfolio").css("background-image","url('static/city.jpg')");
+    };
+
     $('.project').click(function(){
         window.open($(this).find('a:first').attr('href'), '_blank');
         return false;
