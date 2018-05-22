@@ -5,7 +5,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 	border: 0;
 	font-size: 100%;
 	font-weight: 200;
-    font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 	vertical-align: baseline;
 	background: transparent;
 }
@@ -131,7 +131,7 @@ h5 {
 		background-repeat: no-repeat;
 		background-attachment: fixed;
     @include background-size(cover);
-		transition: background 0.5s linear;
+		transition: background 0.5s ease;
 }
 #header h1 {
     color: #FFFFFF;
@@ -231,6 +231,7 @@ h5 {
 	@media screen and (min-width: 992px) {
 		column-count: 2;
   	}
+
 }
 .card {
 	border: none;
