@@ -1,3 +1,7 @@
+var host = "www.isaacsuntag.com";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+window.location.protocol = "https";
+
 $(document).ready(function() {
     $('body').removeClass('fade-out');
 
