@@ -75,12 +75,14 @@ $imgwidth: 300px;
 	}
 }
 body {
+		background-color: black;
     opacity: 1;
-    transition: 1s opacity;
+    transition: 0.5s opacity;
 }
 body.fade-out {
     opacity: 0;
     transition: none;
+		animation-play-state: paused !important;
 }
 a, a:hover, a:visited, a:active {
     text-decoration: none;
@@ -95,17 +97,12 @@ a, a:hover, a:visited, a:active {
     height: auto;
     min-height: 100%;
     padding: 0;
+		padding-bottom: 50px;
     display: flex;
 }
 .content {
     margin: auto;
     text-align: center;
-}
-.scroll_button {
-    margin: 50px 20px;
-    opacity: .5;
-    display: inline-block;
-    color: #FFFFFF;
 }
 h1 {
     font-size: 3em;
@@ -135,12 +132,69 @@ h5 {
 }
 #header h1 {
     color: #FFFFFF;
+		margin-bottom: 20px;
 }
 .description {
     background-color: #FFFFFF;
     background-color: rgba(255,255,255,.95);
     padding: 20px;
+		animation: createBox 1.2s;
 }
+@keyframes createBox {
+	0% {
+		transform: scale3d(0, .01, 1);
+	}
+	65% {
+		transform: scale3d(1, .01, 1);
+	}
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+.scroll_down {
+	position: absolute;
+	left: 0;
+	bottom: 100px;
+	text-align: center;
+	width: 100%;
+	color: white;
+	font-size: 0.5em;
+	opacity: 0.5;
+}
+.scroll_down:after {
+  content:'';
+  width:30px;
+  height:30px;
+  position:absolute;
+  margin:auto;
+  top:0;
+  right:0;
+  left:0;
+  -webkit-animation:3s arrow infinite ease;
+  animation:3s arrow infinite ease;
+	border-right:2px solid #FFF;
+  border-bottom:2px solid #FFF;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+@-webkit-keyframes arrow {
+  0%,100% {
+    top:10px;
+  }
+  50% {
+    top:30px;
+  }
+}
+@keyframes arrow {
+  0%,100% {
+    top:10px;
+  }
+  50% {
+    top:30px;
+  }
+}
+
 // Information Section
 #info {
     background-color: #FFF;
@@ -165,10 +219,8 @@ h5 {
 #info .information p {
 	padding-bottom: 20px;
 }
-#info .scroll_button {
-    color: #000000;
-}
 .socials {
+	padding: 20px;
 	font-size: 2em;
 }
 // Portfolio Section
@@ -217,6 +269,7 @@ h5 {
 }
 // Resume Section
 #resume {
+	background-color: white;
 	font-size: 0.8em;
 }
 #resume ul {
@@ -238,9 +291,6 @@ h5 {
 	border-radius: 0;
 	padding: 20px;
 }
-#resume .scroll_button {
-    color: #000000;
-}
 
 #resume .btn {
 	font: inherit;
@@ -250,10 +300,61 @@ h5 {
 .footer {
 	text-align: center;
 	font-size: 0.5em;
+	background-color: white;
+	padding-top: 20px;
 }
 
 // Fixes bootstrap row's negative margins
 .zeroed {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+// Navigation bubbles on right side
+.pagination {
+	position:fixed;
+	right:20px;
+	top: 50%;
+  transform: translateY(-50%);
+	display: block;
+	font-size:0.5em;
+	z-index: 10;
+}
+.pagination a {
+	display:block;
+	height:20px;
+	margin-bottom:5px;
+	color:darkgrey;
+	position:relative;
+	padding:4px;
+}
+.pagination a.active:after {
+	box-shadow:inset 0 0 0 5px;
+}
+.pagination a .hover-text {
+	position:absolute;
+	right:15px;
+	top:0px;
+	opacity:0;
+	-webkit-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+	padding-right: 15px;
+}
+.pagination a:hover .hover-text {
+	opacity: 1;
+}
+.pagination a:after {
+	-webkit-transition:box-shadow 0.5s ease;
+	transition:box-shadow 0.5s ease;
+	width:10px;
+	height:10px;
+	display: block;
+	border:1px solid;
+	border-radius:50%;
+	content:'';
+	position: absolute;
+	margin:auto;
+	top:0;
+	right:4px;
+	bottom:0;
 }
