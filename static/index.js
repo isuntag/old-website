@@ -57,13 +57,12 @@ $(document).ready(function() {
       touchScroll:true,
       // A callback that is fired before a section is scrolled to via the move method. Arguments include the index of the section and an array of all section elements.
       before:function(i,panels) {
-        var ref = panels[i].attr("data-section-name");
         $(".pagination .active").removeClass("active");
-        $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
+        $(".pagination").find("li[data-id='"+ i +"']").addClass("active");
         if(i == 0) {
-          $(".pagination").css("display", "none");
+          $(".pagination").css("opacity", "0");
         } else {
-          $(".pagination").css("display", "block");
+          $(".pagination").css("opacity", "1");
         }
         // Show scrollbar if section has overflow
         if(panels[i].height() > $(window).height()) {
@@ -81,19 +80,25 @@ $(document).ready(function() {
           if(i===0) {
             activeClass = "active";
           }
-          pagination += "<li><a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
+          pagination += "<li class=\"" + activeClass + "\" data-id=\"" + i + "\"></li>";
         });
         pagination += "</ul>";
         $(".container-fluid").append(pagination);
-        $(".pagination").css("display", "none");
-        $(".pagination a").on("click",$.scrollify.move);
+        $(".pagination").css("opacity", "0");
+        $(".pagination li").on("click",function() {
+          $.scrollify.move(parseInt($(this).attr("data-id")));
+        });
       },
       // A callback that is fired after a new section is scrolled to. Arguments include the index of the section and an array of all section elements.
       after:function() {},
       // A callback that is fired after the window is resized.
       afterResize:function() {
-        // $.scrollify.destroy();
         $.scrollify.update();
+        if($.scrollify.current().height() > $(window).height()) {
+          $('body').css("overflow", "scroll")
+        } else {
+          $('body').css("overflow", "hidden")
+        }
       }
     });
   });

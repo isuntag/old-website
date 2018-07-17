@@ -55,10 +55,12 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 body {
   background-color: black;
   opacity: 1;
+  -webkit-transition: 0.5s opacity;
   transition: 0.5s opacity; }
 
 body.fade-out {
   opacity: 0;
+  -webkit-transition: none;
   transition: none;
   animation-play-state: paused !important; }
 
@@ -108,7 +110,8 @@ h5 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  transition: background 0.5s ease; }
+  -webkit-transition: background-image 0.5s ease;
+  transition: background-image 0.5s ease; }
 
 #header h1 {
   color: #FFFFFF;
@@ -118,9 +121,17 @@ h5 {
   background-color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
-  animation: createBox 1.2s; }
+  animation: createBox 1.2s;
+  -webkit-animation: createBox 1.2s; }
 
 @keyframes createBox {
+  0% {
+    transform: scale3d(0, 0.01, 1); }
+  65% {
+    transform: scale3d(1, 0.01, 1); }
+  100% {
+    transform: scale3d(1, 1, 1); } }
+@-webkit-keyframes createBox {
   0% {
     transform: scale3d(0, 0.01, 1); }
   65% {
@@ -130,11 +141,11 @@ h5 {
 .scroll_down {
   position: absolute;
   left: 0;
-  bottom: 100px;
+  bottom: 80px;
   text-align: center;
   width: 100%;
   color: white;
-  font-size: 0.5em;
+  font-size: calc(9pt + 0.2em);
   opacity: 0.5; }
 
 .scroll_down:after {
@@ -146,24 +157,24 @@ h5 {
   top: 0;
   right: 0;
   left: 0;
-  -webkit-animation: 3s arrow infinite ease;
   animation: 3s arrow infinite ease;
+  -webkit-animation: 3s arrow infinite ease;
   border-right: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
-  -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 @-webkit-keyframes arrow {
   0%,100% {
-    top: 10px; }
+    top: 20px; }
   50% {
-    top: 30px; } }
+    top: 50px; } }
 @keyframes arrow {
   0%,100% {
-    top: 10px; }
+    top: 20px; }
   50% {
-    top: 30px; } }
+    top: 50px; } }
 #info {
   background-color: #FFF; }
 
@@ -197,7 +208,8 @@ h5 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  transition: background 0.5s linear; }
+  -webkit-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear; }
 
 #portfolio h1 {
   color: #FFFFFF;
@@ -273,47 +285,26 @@ h5 {
   position: fixed;
   right: 20px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   display: block;
   font-size: 0.5em;
-  z-index: 10; }
+  z-index: 10;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in; }
 
-.pagination a {
-  display: block;
-  height: 20px;
-  margin-bottom: 5px;
-  color: darkgrey;
-  position: relative;
-  padding: 4px; }
-
-.pagination a.active:after {
-  box-shadow: inset 0 0 0 5px; }
-
-.pagination a .hover-text {
-  position: absolute;
-  right: 15px;
-  top: 0px;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-  padding-right: 15px; }
-
-.pagination a:hover .hover-text {
-  opacity: 1; }
-
-.pagination a:after {
-  -webkit-transition: box-shadow 0.5s ease;
-  transition: box-shadow 0.5s ease;
+.pagination li {
   width: 10px;
   height: 10px;
   display: block;
-  border: 1px solid;
+  border: 1px solid darkgrey;
   border-radius: 50%;
-  content: '';
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 4px;
-  bottom: 0; }
+  margin: 15px 5px;
+  -webkit-transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease; }
+
+.pagination li.active {
+  box-shadow: inset 0 0 0 5px darkgrey; }
 
 /*# sourceMappingURL=index.css.map */
