@@ -3,8 +3,8 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
 window.location.protocol = "https";
 
 $(document).ready(function() {
+
   $('body').removeClass('fade-out');
-  // $('.section').css({ height: window.innerHeight });
   // Load #header background image
   var fern = new Image();
   fern.src = "static/fern.jpg";
@@ -64,12 +64,6 @@ $(document).ready(function() {
         } else {
           $(".pagination").css("opacity", "1");
         }
-        // Show scrollbar if section has overflow
-        if(panels[i].height() > $(window).height()) {
-          $('body').css("overflow", "scroll")
-        } else {
-          $('body').css("overflow", "hidden")
-        }
       },
       // A callback that is fired after Scrollify's initialisation.
       afterRender:function() {
@@ -94,11 +88,6 @@ $(document).ready(function() {
       // A callback that is fired after the window is resized.
       afterResize:function() {
         $.scrollify.update();
-        if($.scrollify.current().height() > $(window).height()) {
-          $('body').css("overflow", "scroll")
-        } else {
-          $('body').css("overflow", "hidden")
-        }
       }
     });
   });
