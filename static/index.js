@@ -4,7 +4,7 @@ window.location.protocol = "https";
 
 $(document).ready(function() {
   $('body').removeClass('fade-out');
-
+  // $('.section').css({ height: window.innerHeight });
   // Load #header background image
   var fern = new Image();
   fern.src = "static/fern.jpg";
