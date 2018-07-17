@@ -55,6 +55,10 @@ $imgwidth: 300px;
 	#header, #portfolio {
         background-attachment: scroll !important;
     }
+	// Removes pagination bubbles
+	.pagination {
+		display: none !important;
+	}
 }
 /* md */
 @media screen and (min-width: 992px) {

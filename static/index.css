@@ -25,7 +25,10 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     font-size: 1.2em; } }
 @media screen and (max-width: 991px) {
   #header, #portfolio {
-    background-attachment: scroll !important; } }
+    background-attachment: scroll !important; }
+
+  .pagination {
+    display: none !important; } }
 /* md */
 @media screen and (min-width: 992px) {
   body {
