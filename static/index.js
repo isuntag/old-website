@@ -95,11 +95,11 @@ $(document).ready(function() {
       // A callback that is fired after the window is resized.
       afterResize:function() {
         $.scrollify.update();
-        if($.scrollify.current().height() > $(window).height()) {
-          $('body').css("overflow", "scroll")
-        } else {
-          $('body').css("overflow", "hidden")
-        }
+        // if($.scrollify.current().height() > $(window).height()) {
+        //   $('body').css("overflow", "scroll")
+        // } else {
+        //   $('body').css("overflow", "hidden")
+        // }
       }
     });
   });
