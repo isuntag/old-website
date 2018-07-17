@@ -48,7 +48,7 @@ $(document).ready(function() {
       // A CSS selector for elements within sections that require standard scrolling behaviour.
       // standardScrollElements: "",
       // A boolean to define whether Scollify assigns a height to the sections. True by default.
-      setHeights: true,
+      setHeights: false,
       // A boolean to define whether Scrollify will allow scrolling over overflowing content within sections. True by default.
       overflowScroll: true,
       // A boolean to define whether Scrollify updates the browser location hash when scrolling through sections. True by default.

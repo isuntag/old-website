@@ -87,6 +87,9 @@ $imgwidth: 300px;
 		font-size: 1.7em;
 	}
 }
+html, body {
+	height: 100%;
+}
 body {
 		background-color: black;
     opacity: 1;
@@ -103,14 +106,13 @@ a, a:hover, a:visited, a:active {
 }
 .container-fluid {
     padding: 0;
-    height: 100vh;
+    height: 100%;
     color: #000000;
 }
 .section {
     height: auto;
     min-height: 100%;
-    padding: 0;
-		padding-bottom: 50px;
+    padding: 30px 0;
     display: flex;
 }
 .content {
@@ -228,7 +230,6 @@ h5 {
         display: flex;
         align-items: center;
     }
-
 }
 #info .content img {
     width: 100%;
