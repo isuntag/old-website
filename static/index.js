@@ -3,8 +3,9 @@ if ((host == window.location.host) && (window.location.protocol != "https:"))
 window.location.protocol = "https";
 
 $(document).ready(function() {
+  $('body').css({ height: $(window).innerHeight })
+
   $('body').removeClass('fade-out');
-  // $('.section').css({ height: window.innerHeight });
   // Load #header background image
   var fern = new Image();
   fern.src = "static/fern.jpg";
