@@ -64,6 +64,12 @@ $(document).ready(function() {
         } else {
           $(".pagination").css("opacity", "1");
         }
+        // Show scrollbar if section has overflow
+        if(panels[i].height() > $(window).height()) {
+          $('body').css("overflow", "scroll")
+        } else {
+          $('body').css("overflow", "hidden")
+        }
       },
       // A callback that is fired after Scrollify's initialisation.
       afterRender:function() {
@@ -88,6 +94,11 @@ $(document).ready(function() {
       // A callback that is fired after the window is resized.
       afterResize:function() {
         $.scrollify.update();
+        if($.scrollify.current().height() > $(window).height()) {
+          $('body').css("overflow", "scroll")
+        } else {
+          $('body').css("overflow", "hidden")
+        }
       }
     });
   });
