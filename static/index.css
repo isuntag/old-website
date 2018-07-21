@@ -82,12 +82,12 @@ a, a:hover, a:visited, a:active {
 .section {
   height: auto;
   min-height: 100%;
-  padding: 30px 0;
   display: flex; }
 
 .content {
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  padding: 30px 0; }
 
 h1 {
   font-size: 3em; }
@@ -106,17 +106,59 @@ h5 {
   text-transform: uppercase;
   text-align: left; }
 
+.zeroed {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+.pagination {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: block;
+  font-size: 0.5em;
+  z-index: 10;
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in; }
+
+.pagination li {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: block;
+  border: 1px solid darkgrey;
+  border-radius: 50%;
+  margin: 15px 5px;
+  -webkit-transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease; }
+
+.pagination li.active {
+  box-shadow: inset 0 0 0 5px darkgrey; }
+
+.pagination:hover {
+  cursor: pointer; }
+
+.nav-label {
+  color: darkgray;
+  font-size: 1.3em;
+  position: relative;
+  left: -70px;
+  top: -10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out; }
+
+.pagination li:hover .nav-label {
+  opacity: 1; }
+
 #header {
-  background-color: #2b3f00;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: url("fern.jpg") center center no-repeat fixed #2b3f00;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  -webkit-transition: background-image 0.5s ease;
-  transition: background-image 0.5s ease; }
+  background-size: cover; }
 
 #header h1 {
   color: #FFFFFF;
@@ -184,38 +226,104 @@ h5 {
 #info {
   background-color: #FFF; }
 
-#info h1 {
-  margin-bottom: 100px; }
+#info .top {
+  margin-bottom: 60px; }
 
-@media only screen and (min-width: 992px) {
-  #info .inner {
-    display: flex;
-    align-items: center; } }
-#info .content img {
-  width: 100%;
-  max-width: 300px; }
+#info img {
+  width: 200px;
+  padding: 40px 10px;
+  float: left; }
+  @media screen and (max-width: 991px) {
+    #info img {
+      float: none; } }
 
-#info .information {
+#info p {
+  margin-bottom: 20px; }
+
+.skills {
+  font-size: 0.6em;
+  display: flex;
+  flex-flow: column nowrap;
   padding-top: 20px; }
 
-#info .information p {
-  padding-bottom: 20px; }
+.skill {
+  background: whitesmoke;
+  width: 100%;
+  text-align: right;
+  margin: 10px 0;
+  position: relative;
+  padding: 5px 0;
+  border-radius: 2px; }
+
+.skill .bar {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: left;
+  animation: 2s bar ease-out;
+  -webkit-animation: 2s bar ease-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes bar {
+  from {
+    background: darkseagreen;
+    max-width: 0; }
+  to {
+    background: darkseagreen;
+    max-width: 100%; } }
+@keyframes bar {
+  from {
+    background: darkseagreen;
+    max-width: 0; }
+  to {
+    background: darkseagreen;
+    max-width: 100%; } }
+.skills .skill:nth-child(2) .bar {
+  animation-delay: 0.3s; }
+
+.skills .skill:nth-child(3) .bar {
+  animation-delay: 0.6s; }
+
+.skills .skill:nth-child(4) .bar {
+  animation-delay: 0.9s; }
+
+.skills .skill:nth-child(5) .bar {
+  animation-delay: 1.2s; }
+
+.skills .skill:nth-child(6) .bar {
+  animation-delay: 1.5s; }
+
+.skills .skill:nth-child(7) .bar {
+  animation-delay: 1.8s; }
+
+.skill .bar .tag {
+  width: 150px;
+  padding: 5px 0;
+  background-color: #2b3f00;
+  color: #FFF;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px 0 0 2px; }
+
+.skill .percent {
+  position: relative;
+  right: 0;
+  padding-right: 5px; }
 
 .socials {
-  padding: 20px;
-  font-size: 2em; }
+  font-size: 1.5em; }
 
 #portfolio {
-  background-color: #416d8c;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: url("fern.jpg") center center no-repeat fixed #2b3f00;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  -webkit-transition: background-image 0.5s linear;
-  transition: background-image 0.5s linear; }
+  background-size: cover; }
 
 #portfolio h1 {
   color: #FFFFFF;
@@ -230,7 +338,6 @@ h5 {
   background-color: #FFFFFF; }
 
 .project:hover {
-  cursor: hand;
   cursor: pointer; }
 
 .imagecontainer {
@@ -252,65 +359,40 @@ h5 {
 .stack {
   font-size: 0.9em; }
 
-#resume {
-  background-color: white;
-  font-size: 0.8em; }
+#contact {
+  background-color: #FFFFFF; }
 
-#resume ul {
-  text-align: left;
-  list-style-position: inside; }
+#contact .content {
+  padding-bottom: 30px; }
 
-#resume .experience h5 {
-  margin-bottom: 10px; }
+#contact input, #contact textarea {
+  margin-top: 16px;
+  width: 60%;
+  padding: 10px;
+  font: inherit;
+  font-size: 0.7em !important;
+  border-radius: 2px;
+  border: 1px solid darkgray;
+  -webkit-transition: border 360ms;
+  transition: border 360ms; }
 
-.card-columns {
-  column-count: 1; }
-  @media screen and (min-width: 992px) {
-    .card-columns {
-      column-count: 2; } }
+#contact input:focus, #contact textarea:focus {
+  outline: none;
+  border: 1px solid black; }
 
-.card {
+#contact textarea {
+  min-height: 150px; }
+
+#contact input[type="submit"] {
+  background-color: black;
+  color: white;
   border: none;
-  border-radius: 0;
-  padding: 20px; }
+  opacity: 1;
+  -webkit-transition: opacity 360ms;
+  transition: opacity 360ms; }
 
-#resume .btn {
-  font: inherit; }
-
-.footer {
-  text-align: center;
-  font-size: 0.5em;
-  background-color: white;
-  padding-top: 20px; }
-
-.zeroed {
-  padding: 0 !important;
-  margin: 0 !important; }
-
-.pagination {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: block;
-  font-size: 0.5em;
-  z-index: 10;
-  -webkit-transition: opacity 0.1s ease-in;
-  transition: opacity 0.1s ease-in; }
-
-.pagination li {
-  width: 10px;
-  height: 10px;
-  display: block;
-  border: 1px solid darkgrey;
-  border-radius: 50%;
-  margin: 15px 5px;
-  -webkit-transition: box-shadow 0.5s ease;
-  transition: box-shadow 0.5s ease; }
-
-.pagination li.active {
-  box-shadow: inset 0 0 0 5px darkgrey; }
+#contact input[type="submit"]:hover {
+  cursor: pointer;
+  opacity: 0.6; }
 
 /*# sourceMappingURL=index.css.map */

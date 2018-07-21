@@ -22,7 +22,7 @@
 <body>
   <script>document.body.className += ' fade-out';</script>
   <div class="container-fluid">
-    <div id="header" class="section col-xs-12" data-section-name="header">
+    <div id="header" class="section col-xs-12" data-section-name="Home">
       <div class="content">
         <h1>Isaac Suntag</h1>
         <div class="description">
@@ -33,29 +33,73 @@
         </div>
       </div>
     </div>
-    <div id="info" class="section col-xs-12" data-section-name="info">
+    <div id="info" class="section col-xs-12" data-section-name="About">
       <div class="content">
-        <h1>Who is Isaac Suntag?</h1>
-        <div class="row justify-content-center zeroed">
-          <div class="image col-xs-12 col-lg-2 align-self-center">
+        <div class="top">
+          <h1>Who am I?</h1>
+        </div>
+        <div class="row justify-content-center align-items-stretch zeroed">
+          <div class="col-xs-12 col-lg-5 align-self-center">
             <img src="static/me.jpg" alt="Picture of Isaac Suntag" class="rounded-circle">
+            <p>I'm a full stack developer with a passion for front end development. I enjoy and take pride in creating intuitive and dynamic user experiences. I started my front end development experience on Neopets (do you remember that website?) and have continued to learn and refine my code ever since.</p>
+            <p>I recently attended a 14-week full stack development bootcamp and graduated with over 1,000 hours of coding experience. I am looking to join a creative team to develop innovative solutions for real world problems while continuing to learn new technologies.</p>
+            <p class="socials">
+              <a href="https://www.linkedin.com/in/isuntag/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+              <a href="https://github.com/isuntag" target="_blank" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/isuntag/" target="_blank" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </p>
           </div>
-          <div class="information col-xs-12 col-lg-6 align-self-center">
-            <p>I am a full stack developer with a passion for front end development. I am experienced in building and deploying applications in the MEAN Stack, Python, and Java. I also have over 10 years of avocational front end experience. I am looking to join a passionate team to develop innovative solutions for real world problems while continuing to learn new technologies.</p>
-            <p>My other passions include street and nature photography and caring for my jungle of houseplants. I currently have over 30 plants and I'm always looking for more.</p>
+          <div class="skills col-xs-12 col-lg-5">
+            <div class="skill">
+              <div class="bar" style="width:60%">
+                <span class="tag">Angular</span>
+              </div>
+              <div class="percent">60%</div>
+            </div>
+            <div class="skill">
+              <div class="bar" style="width:80%">
+                <span class="tag">CSS</span>
+              </div>
+              <div class="percent">80%</div>
+            </div>
+            <div class="skill">
+              <div class="bar" style="width:90%">
+                <span class="tag">HTML</span>
+              </div>
+              <div class="percent">90%</div>
+            </div>
+            <div class="skill">
+              <div class="bar" style="width:70%">
+                <span class="tag">Javascript</span>
+              </div>
+              <div class="percent">70%</div>
+            </div>
+            <div class="skill">
+              <div class="bar" style="width:40%">
+                <span class="tag">Node.js</span>
+              </div>
+              <div class="percent">40%</div>
+            </div>
+            <div class="skill">
+              <div class="bar" style="width:90%">
+                <span class="tag">Photoshop</span>
+              </div>
+              <div class="percent">90%</div>
+            </div>
+            <div class="skill">
+              <div class="bar" style="width:60%">
+                <span class="tag">Illustrator</span>
+              </div>
+              <div class="percent">60%</div>
+            </div>
           </div>
-          <div class="socials col-lg-12">
-            <a href="https://www.linkedin.com/in/isuntag/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-            <a href="https://github.com/isuntag" target="_blank" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/isuntag/" target="_blank" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          </div>
+
         </div>
       </div>
     </div>
-    <div id="portfolio" class="section col-xs-12" data-section-name="portfolio">
+    <div id="portfolio" class="section col-xs-12" data-section-name="Portfolio">
       <div class="content">
         <h1>Portfolio</h1>
-
         <div class="row justify-content-center zeroed">
           <div class="project col-12 col-lg-5">
             <div class="row">
@@ -98,21 +142,20 @@
               <p>A simple travel planning application that allows users to create trips and join the trips of other users. Created in 2.5 hours with Django.</p>
             </div>
           </div>
-          <div class="project col-12 col-lg-5">
-            <div class="row">
-              <div class="col-12 col-sm-8 align-self-center">
-                <h3><a href="https://github.com/isuntag/To-Do-List" target="_blank">Group To Do List</a></h3>
-              </div>
-              <div class="col-12 col-sm-4 align-self-center stack">
-                Python
-              </div>
-            </div>
-            <div class="col-12 align-self-center">
-              <p>To do list application that allows users to create lists and tasks with multiple users assigned to them. Tasks can be completed by any assigned user.</p>
-              <p><small>(Currently under development)</small></p>
-            </div>
-          </div>
         </div>
+      </div>
+    </div>
+    <div id="contact" class="section col-xs-12" data-section-name="Contact">
+      <div class="content">
+        <h1>Contact</h1>
+        <p>Have a question or want to work together?</p>
+        <form action="https://formspree.io/isuntag@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="_replyto" placeholder="Email" required />
+          <textarea name="body" placeholder="Your Message" required></textarea>
+          <input type="hidden" name="_next" value="" />
+          <input type="submit" value="Send" />
+        </form>
       </div>
     </div>
   </div>

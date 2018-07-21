@@ -5,19 +5,6 @@ window.location.protocol = "https";
 $(document).ready(function() {
 
   $('body').removeClass('fade-out');
-  // Load #header background image
-  var fern = new Image();
-  fern.src = "static/fern.jpg";
-  fern.onload = function(){
-    $("#header").css("background-image","url('static/fern.jpg')");
-  };
-
-  // Load #header background image
-  var city = new Image();
-  city.src = "static/fern.jpg";
-  city.onload = function(){
-    $("#portfolio").css("background-image","url('static/fern.jpg')");
-  };
 
   $('.project').click(function(){
     window.open($(this).find('a:first').attr('href'), '_blank');
@@ -26,10 +13,9 @@ $(document).ready(function() {
 
   $('.scroll_down').on("click", function() {
     $.scrollify.next();
-  })
+  });
 
-
-  // Scrollify
+  // Scrollify Settings
   $(function() {
     $.scrollify({
       // A CSS selector for the sections of the page.
@@ -57,6 +43,7 @@ $(document).ready(function() {
       touchScroll:true,
       // A callback that is fired before a section is scrolled to via the move method. Arguments include the index of the section and an array of all section elements.
       before:function(i,panels) {
+        // Change nav bubble to indicate correct section
         $(".pagination .active").removeClass("active");
         $(".pagination").find("li[data-id='"+ i +"']").addClass("active");
         if(i == 0) {
@@ -71,33 +58,65 @@ $(document).ready(function() {
           $('body').css("overflow", "hidden")
         }
       },
-      // A callback that is fired after Scrollify's initialisation.
+      // // A callback that is fired after Scrollify's initialisation.
       afterRender:function() {
-        var pagination = "<ul class=\"pagination\">";
-        var activeClass = "";
-        $(".section").each(function(i) {
-          activeClass = "";
-          if(i===0) {
-            activeClass = "active";
-          }
-          pagination += "<li class=\"" + activeClass + "\" data-id=\"" + i + "\"></li>";
-        });
-        pagination += "</ul>";
-        $(".container-fluid").append(pagination);
-        $(".pagination").css("opacity", "0");
-        $(".pagination li").on("click",function() {
-          $.scrollify.move(parseInt($(this).attr("data-id")));
-        });
-      },
-      // A callback that is fired after a new section is scrolled to. Arguments include the index of the section and an array of all section elements.
-      after:function() {},
-      // A callback that is fired after the window is resized.
-      afterResize:function() {
-        $.scrollify.update();
-        if($.scrollify.current().height() > $(window).height()) {
+        // Disable scrollify if window width is less than 992
+        if($(window).width() < 992) {
           $('body').css("overflow", "scroll")
+          $.scrollify.disable();
         } else {
-          $('body').css("overflow", "hidden")
+          // create nav bubbles
+          var pagination = "<ul class=\"pagination\">";
+          var activeClass = "";
+          $(".section").each(function(i) {
+            activeClass = "";
+            // set the current scrollify page to be active
+            if($(this).attr('id') == $.scrollify.current()[0].id) {
+              activeClass = "active";
+            }
+            pagination += "<li class=\"" + activeClass + "\" data-id=\"" + i + "\"><span class=\"nav-label\">" + $(this).attr('data-section-name') + "</span></li>";
+          });
+          pagination += "</ul>";
+          $(".container-fluid").append(pagination);
+          // if the current scrollify page is the header page make opacity 0
+          if($.scrollify.current()[0].id == 'header'){
+            $(".pagination").css("opacity", "0");
+          }
+          // on click of nav bubble move to the correct page
+          $(".pagination li").on("click",function() {
+            $.scrollify.move(parseInt($(this).attr("data-id")));
+          });
+          // set correct overflow for current section
+          if($.scrollify.current().height()>$(window).height()) {
+            $('body').css("overflow", "scroll")
+          } else {
+            $('body').css("overflow", "hidden")
+          }
+        }
+      },
+      // // A callback that is fired after the window is resized.
+      afterResize:function() {
+        // Update heights of sections
+        $.scrollify.update();
+        // Disable scrollify if window width is less than 992
+        if($(window).width() < 992) {
+          $('body').css("overflow", "scroll")
+          $.scrollify.disable();
+        } else {
+          $.scrollify.enable();
+          // if the current scrollify page is the header page make opacity 0
+          if($.scrollify.current()[0].id == 'header'){
+            $(".pagination").css("opacity", "0");
+          }
+          // scroll to top of current section
+          var $target = $('html,body');
+          $target.animate({scrollTop: $.scrollify.current()[0].offsetTop}, 500);
+          // set correct overflow for current section
+          if($.scrollify.current().height() > $(window).height()) {
+            $('body').css("overflow", "scroll")
+          } else {
+            $('body').css("overflow", "hidden")
+          }
         }
       }
     });
