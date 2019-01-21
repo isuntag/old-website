@@ -332,7 +332,6 @@ h5 {
   transition: opacity 360ms; }
 
 .resume a:hover {
-  cursor: pointer;
   opacity: 0.4; }
 
 #portfolio {
